@@ -9,27 +9,29 @@
         </v-card-title>
         <v-card-text>
         <v-form width="100%" >
-            <v-container :class="{'has-error':errorEmail}" md-has-email>
-                <span v-if="errorEmail" class="help-block">
+            <v-container>
+
+            <div :class="{'has-error':errorEmail}" md-has-email>
+                <span v-if="errorEmail" class="text-error">
                     <strong>{{emailError}}</strong>
                 </span>
                 <v-text-field prepend-icon="email" id="email" label="Email" type="email" name="email" v-model="response.email" required autofocus></v-text-field>
-            </v-container>
-            <v-container :class="{'has-error':errorPassword}" md-has-password>
-                <span v-if="errorPassword" class="help-block">
+            </div>
+
+            <div :class="{'has-error':errorPassword}" md-has-password>
+                <span v-if="errorPassword" class="text-error">
                     <strong>{{ passwordError }}</strong>
                 </span>
                 <v-text-field prepend-icon="lock" id="password" label="Password" type="password" name="password" v-model="response.password" required></v-text-field>
-            </v-container>
-            <v-container style="display:inline-block">
-                <v-btn @click.prevent="loginPost" ref="send" class="green" type="submit" >Send</v-btn>
+            </div>
+
                 <v-checkbox name="remember" v-model="response.remember" label="Remember"></v-checkbox>
+                <v-btn block @click.prevent="loginPost" ref="send" class="orange darken-3" type="submit" >Send</v-btn>
+                <br>
+                <v-btn outline round  block class="cyan" href="/register">Sign Up</v-btn>
+                <v-btn outline block round  class="cyan" href="/register">Forgout your password?</v-btn>
+
             </v-container>
-              <center>
-                  <a href="/register">Sign Up</a>
-                  <br>
-                  <a  href="#">Forgout your password?</a>
-              </center>
             <header v-if="showSlider" class="bar_progress">
                 <div aria-busy="true" aria-label="Loading, please wait." role="progressbar"></div> 
             </header>

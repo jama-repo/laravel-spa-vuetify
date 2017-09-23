@@ -1,7 +1,7 @@
 <template>
 <v-layout>
     <v-flex xs12 sm4 offset-sm4>
-      <v-card class="login-template ">
+      <v-card class="register-template">
         <v-card-title primary-title>
           <div align="center" class="md-title"> 
             <label> Sign Up </label> 
@@ -11,40 +11,40 @@
         <v-form width="100%" >
 
             <v-container >
-                <span v-if="errorName" class="help-block">
-                    <strong>{{nameError}}</strong>
-                </span>
-                <v-text-field prepend-icon="person"  label="Name" type="text" name="name" v-model="response.name" required autofocus></v-text-field>
+                <div>
+                    <span v-if="errorName" class="text-error">
+                        <strong>{{nameError}}</strong>
+                    </span>
+                    <v-text-field prepend-icon="person"  label="Name" type="text" name="name" v-model="response.name" required autofocus></v-text-field>
+                </div>
+
+                <div>
+                    <span v-if="errorEmail" class="text-error">
+                        <strong>{{emailError}}</strong>
+                    </span>
+                    <v-text-field prepend-icon="email" label="Email" type="email" name="email" v-model="response.email" required></v-text-field>
+                </div>
+
+                <div :class="{'has-error':errorPassword}" md-has-password>
+                    <span v-if="errorPassword" class="text-error">
+                        <strong>{{ passwordError }}</strong>
+                    </span>
+                    <v-text-field prepend-icon="lock"  label="Password" type="password" name="password" v-model="response.password" required></v-text-field>
+                </div>
+
+                <div :class="{'has-error':errorPassword}" md-has-password>
+                    <span v-if="errorPassword" class="text-error">
+                        <strong>{{ passwordError }}</strong>
+                    </span>
+                    <v-text-field prepend-icon="lock"  label="Password Confirmation" type="password" name="password_confirmation" v-model="response.password_confirmation" required></v-text-field>
+                </div>
+
+                <v-btn block @click.prevent="registerPost"  class="primary" type="submit" >Send</v-btn>
+                <br>
+                <v-btn outline round  block class="cyan" href="/login">Sign In</v-btn>
+
             </v-container>
 
-            <v-container >
-                <span v-if="errorEmail" class="help-block">
-                    <strong>{{emailError}}</strong>
-                </span>
-                <v-text-field prepend-icon="email" label="Email" type="email" name="email" v-model="response.email" required></v-text-field>
-            </v-container>
-
-            <v-container :class="{'has-error':errorPassword}" md-has-password>
-                <span v-if="errorPassword" class="help-block">
-                    <strong>{{ passwordError }}</strong>
-                </span>
-                <v-text-field prepend-icon="lock"  label="Password" type="password" name="password" v-model="response.password" required></v-text-field>
-            </v-container>
-
-            <v-container :class="{'has-error':errorPassword}" md-has-password>
-                <span v-if="errorPassword" class="help-block">
-                    <strong>{{ passwordError }}</strong>
-                </span>
-                <v-text-field prepend-icon="lock"  label="Password Confirmation" type="password" name="password_confirmation" v-model="response.password_confirmation" required></v-text-field>
-            </v-container>
-
-            <v-container>
-                <v-btn @click.prevent="registerPost"  class="primary" type="submit" >Send</v-btn>
-            </v-container>
-
-              <center>
-                  <a href="/login">Sign In</a>
-              </center>
             <header v-if="showSlider" class="bar_progress">
                 <div aria-busy="true" aria-label="Loading, please wait." role="progressbar"></div> 
             </header>

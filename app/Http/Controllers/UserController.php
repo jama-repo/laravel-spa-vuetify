@@ -72,25 +72,19 @@ class UserController extends Controller
     {
 
         $thisUser = \Auth::user()->id;
-        // return Auth::user()->name;
-        // exit;
-        return Validator::make($request, [
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users'
             // 'password' => 'required|string|min:6|confirmed',
-        ]);
+        ])->validate();
 
-    // Make sure you pass the user's id with axios postData or find it by email
-    
-        $user = Users::find($thisUser);
-    
-    
-
-        $user->name = $request->name;
-        $user->email = $request->email;
-        
-        $user->update();
-        return 'ok';
+         if(!$validator) {
+            $user = User::find($thisUser);
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->update();
+            return http_response_code(200);
+         }
     }
 
     /**

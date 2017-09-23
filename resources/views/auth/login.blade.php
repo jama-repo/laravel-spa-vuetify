@@ -1,5 +1,14 @@
 @extends('layouts.access')
 
 @section('content')
-    <login-page></login-page>
+	<v-app>
+     	<main>
+    		<login-page></login-page>
+    	</main>
+ 	</v-app>
+@stop
+@section('script')
+<script>
+	document.title = 'Login';
+</script>
 @stop

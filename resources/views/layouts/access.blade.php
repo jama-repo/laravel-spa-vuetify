@@ -9,6 +9,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/icons.css')}}">
+    @yield('styles')
 </head>
 <body>
 <div id="parentLoader">
@@ -19,9 +20,11 @@
 <div id="app">
     @yield('content')
 </div>
+</body>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript">
+document.title='Home';
 window.onload =function(event) {
     var spinner = document.querySelector('#parentLoader');
     spinner.style.opacity='0';
@@ -31,4 +34,5 @@ window.onload =function(event) {
 };
 </script>
 </body>
+@yield('script')
 </html>

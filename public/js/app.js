@@ -1646,48 +1646,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     methods: {
@@ -1709,6 +1667,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -1889,6 +1849,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 document.title = 'User Profile';
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1911,7 +1900,7 @@ document.title = 'User Profile';
     methods: {
         updateUser: function updateUser() {
             var vm = this;
-            axios.patch('update/user/{}', vm.save).then(function (res) {
+            axios.patch('update/user/&', vm.save).then(function (res) {
                 console.log(res);
             }).catch(function (error) {
                 console.log(error);
@@ -20032,7 +20021,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "offset-sm4": ""
     }
   }, [_c('v-card', {
-    staticClass: "login-template "
+    staticClass: "register-template"
   }, [_c('v-card-title', {
     attrs: {
       "primary-title": ""
@@ -20046,8 +20035,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "width": "100%"
     }
-  }, [_c('v-container', [(_vm.errorName) ? _c('span', {
-    staticClass: "help-block"
+  }, [_c('v-container', [_c('div', [(_vm.errorName) ? _c('span', {
+    staticClass: "text-error"
   }, [_c('strong', [_vm._v(_vm._s(_vm.nameError))])]) : _vm._e(), _vm._v(" "), _c('v-text-field', {
     attrs: {
       "prepend-icon": "person",
@@ -20064,8 +20053,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.name"
     }
-  })], 1), _vm._v(" "), _c('v-container', [(_vm.errorEmail) ? _c('span', {
-    staticClass: "help-block"
+  })], 1), _vm._v(" "), _c('div', [(_vm.errorEmail) ? _c('span', {
+    staticClass: "text-error"
   }, [_c('strong', [_vm._v(_vm._s(_vm.emailError))])]) : _vm._e(), _vm._v(" "), _c('v-text-field', {
     attrs: {
       "prepend-icon": "email",
@@ -20081,7 +20070,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.email"
     }
-  })], 1), _vm._v(" "), _c('v-container', {
+  })], 1), _vm._v(" "), _c('div', {
     class: {
       'has-error': _vm.errorPassword
     },
@@ -20089,7 +20078,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "md-has-password": ""
     }
   }, [(_vm.errorPassword) ? _c('span', {
-    staticClass: "help-block"
+    staticClass: "text-error"
   }, [_c('strong', [_vm._v(_vm._s(_vm.passwordError))])]) : _vm._e(), _vm._v(" "), _c('v-text-field', {
     attrs: {
       "prepend-icon": "lock",
@@ -20105,7 +20094,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.password"
     }
-  })], 1), _vm._v(" "), _c('v-container', {
+  })], 1), _vm._v(" "), _c('div', {
     class: {
       'has-error': _vm.errorPassword
     },
@@ -20113,7 +20102,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "md-has-password": ""
     }
   }, [(_vm.errorPassword) ? _c('span', {
-    staticClass: "help-block"
+    staticClass: "text-error"
   }, [_c('strong', [_vm._v(_vm._s(_vm.passwordError))])]) : _vm._e(), _vm._v(" "), _c('v-text-field', {
     attrs: {
       "prepend-icon": "lock",
@@ -20129,9 +20118,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.password_confirmation"
     }
-  })], 1), _vm._v(" "), _c('v-container', [_c('v-btn', {
+  })], 1), _vm._v(" "), _c('v-btn', {
     staticClass: "primary",
     attrs: {
+      "block": "",
       "type": "submit"
     },
     on: {
@@ -20140,11 +20130,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.registerPost($event)
       }
     }
-  }, [_vm._v("Send")])], 1), _vm._v(" "), _c('center', [_c('a', {
+  }, [_vm._v("Send")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('v-btn', {
+    staticClass: "cyan",
     attrs: {
+      "outline": "",
+      "round": "",
+      "block": "",
       "href": "/login"
     }
-  }, [_vm._v("Sign In")])]), _vm._v(" "), (_vm.showSlider) ? _c('header', {
+  }, [_vm._v("Sign In")])], 1), _vm._v(" "), (_vm.showSlider) ? _c('header', {
     staticClass: "bar_progress"
   }, [_c('div', {
     attrs: {
@@ -20168,70 +20162,39 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('md-layout', {
-    staticClass: "header-component",
+  return _c('div', [_c('v-toolbar', {
+    staticClass: "primary",
     attrs: {
-      "md-align": "end",
-      "md-gutter": ""
+      "dark": ""
     }
-  }, [_c('md-menu', {
+  }, [_c('v-toolbar-side-icon'), _vm._v(" "), _c('v-toolbar-title', {
+    staticClass: "white--text"
+  }, [_vm._v("Title")]), _vm._v(" "), _c('v-spacer'), _vm._v(" "), _c('v-toolbar-items', {
+    staticClass: "hidden-sm-and-down"
+  }, [_c('v-btn', {
     attrs: {
-      "md-size": "4"
+      "to": "/profile",
+      "flat": ""
     }
-  }, [_c('md-button', {
-    staticClass: "md-icon-button",
+  }, [_vm._v("Profile")])], 1), _vm._v(" "), _c('v-btn', {
     attrs: {
-      "md-menu-trigger": ""
+      "icon": ""
     }
-  }, [_c('md-icon', [_vm._v("phone")])], 1), _vm._v(" "), _c('md-menu-content', [_c('md-menu-item', [_c('md-icon', [_vm._v("phone")]), _vm._v(" "), _c('span', [_vm._v("My Item 1")])], 1), _vm._v(" "), _c('md-menu-item', [_c('md-icon', [_vm._v("phone")]), _vm._v(" "), _c('span', [_vm._v("My Item 2")])], 1), _vm._v(" "), _c('md-menu-item', [_c('md-icon', [_vm._v("phone")]), _vm._v(" "), _c('span', [_vm._v("My Item 3")])], 1)], 1)], 1), _vm._v(" "), _c('md-menu', {
+  }, [_c('v-icon', [_vm._v("search")])], 1), _vm._v(" "), _c('v-btn', {
     attrs: {
-      "md-direction": "bottom left",
-      "md-size": "4"
+      "icon": ""
     }
-  }, [_c('md-button', {
-    staticClass: "md-icon-button",
-    attrs: {
-      "md-menu-trigger": ""
-    }
-  }, [_c('md-icon', [_vm._v("near_me")])], 1), _vm._v(" "), _c('md-menu-content', [_c('md-menu-item', [_c('span', [_vm._v("Find on map")]), _vm._v(" "), _c('md-icon', [_vm._v("near_me")])], 1), _vm._v(" "), _c('md-menu-item', [_c('span', [_vm._v("Call")]), _vm._v(" "), _c('md-icon', [_vm._v("phone")])], 1)], 1)], 1), _vm._v(" "), _c('md-menu', {
-    ref: "menu",
-    attrs: {
-      "md-size": "4"
-    }
-  }, [_c('md-button', {
-    staticClass: "md-icon-button",
-    attrs: {
-      "md-menu-trigger": ""
-    }
-  }, [_c('md-icon', [_vm._v("account_circle")])], 1), _vm._v(" "), _c('md-menu-content', [_c('div', {
-    staticClass: "author-card"
-  }, [_c('md-avatar', {
-    staticClass: "md-large"
-  }, [_c('img', {
-    attrs: {
-      "src": "https://images.alphacoders.com/486/thumb-1920-486997.png",
-      "width": "20",
-      "height": "20",
-      "alt": "Marcos Moura"
-    }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "author-card-info"
-  }, [_c('span', [_vm._v("Marcos Moura")]), _vm._v(" "), _c('div', {
-    staticClass: "author-card-links"
-  }, [_c('router-link', {
-    attrs: {
-      "to": "/profile"
-    }
-  }, [_vm._v("Profile")]), _vm._v(" "), _c('a', {
-    attrs: {
-      "href": "javascript:false;"
-    },
+  }, [_c('v-icon', [_vm._v("apps")])], 1), _vm._v(" "), _c('v-btn', {
+    staticClass: "red darken-1 white--text",
     on: {
       "click": _vm.logout
     }
-  }, [_vm._v("Logout")])], 1)])], 1)])], 1)], 1), _vm._v(" "), _c('br'), _vm._v(" "), _c('div', {
-    staticClass: "container"
-  }, [_c('router-view')], 1)], 1)
+  }, [_vm._v("Logout\r\n      "), _c('v-icon', {
+    attrs: {
+      "dark": "",
+      "right": ""
+    }
+  }, [_vm._v("power_settings_new")])], 1)], 1), _vm._v(" "), _c('v-container', [_c('router-view')], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -20249,33 +20212,56 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "template"
-  }, [_c('md-layout', {
-    staticClass: "template-title",
+  }, [_vm._m(0), _vm._v(" "), _c('v-container', {
     attrs: {
-      "md-align": "center"
+      "fluid": "",
+      "grid-list-md": "",
+      "text-xs-center": ""
     }
-  }, [_c('b', [_vm._v(" User Profile ")])]), _vm._v(" "), _c('md-tabs', {
+  }, [_c('v-tabs', {
     attrs: {
-      "md-centered": ""
+      "dark": "",
+      "fixed": "",
+      "centered": ""
     }
-  }, [_c('md-tab', {
+  }, [_c('v-tabs-bar', {
+    staticClass: "cyan darken-3"
+  }, [_c('v-tabs-slider', {
+    staticClass: "yellow"
+  }), _vm._v(" "), _c('v-tabs-item', {
     attrs: {
-      "md-label": "Basic Data",
-      "md-icon": "account_box"
+      "href": "#tab1"
     }
-  }, [_c('form', [_c('md-layout', {
+  }, [_vm._v("\r\n                Data\r\n              ")]), _vm._v(" "), _c('v-tabs-item', {
     attrs: {
-      "md-align": "center",
-      "md-gutter": ""
+      "href": "#tab2"
     }
-  }, [_c('md-layout', {
+  }, [_vm._v("\r\n                Settings\r\n              ")])], 1), _vm._v(" "), _c('v-tabs-items', [_c('v-tabs-content', {
     attrs: {
-      "md-flex-xsmall": "80",
-      "md-flex-medium": "80",
-      "md-flex": "30"
+      "id": "tab1"
     }
-  }, [_c('md-input-container', [_c('label', [_vm._v("Name")]), _vm._v(" "), _c('md-input', {
+  }, [_c('v-card', {
     attrs: {
+      "flat": ""
+    }
+  }, [_c('v-card-text', [_c('form', {
+    attrs: {
+      "method": "post"
+    }
+  }, [_c('v-layout', {
+    attrs: {
+      "row": "",
+      "wrap": ""
+    }
+  }, [_c('v-flex', {
+    attrs: {
+      "xs12": "",
+      "sm12": "",
+      "md4": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "label": "Name",
       "id": "name",
       "name": "name"
     },
@@ -20286,8 +20272,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "save.name"
     }
-  })], 1), _vm._v(" "), _c('md-input-container', [_c('label', [_vm._v("Email")]), _vm._v(" "), _c('md-input', {
+  })], 1), _vm._v(" "), _c('v-flex', {
     attrs: {
+      "xs12": "",
+      "sm12": "",
+      "md4": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "label": "Email",
       "id": "email",
       "name": "email"
     },
@@ -20298,28 +20291,43 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "save.email"
     }
-  })], 1)], 1), _vm._v(" "), _c('md-layout', {
+  })], 1), _vm._v(" "), _c('v-flex', {
     attrs: {
-      "md-align": "center",
-      "md-flex-xsmall": "80",
-      "md-flex-medium": "80",
-      "md-flex": "20"
+      "xs12": "",
+      "sm12": "",
+      "md3": "",
+      "offset-md1": ""
     }
-  }, [_c('center', [_c('hr'), _vm._v(" "), _c('div', [_c('img', {
+  }, [_c('div', [_c('img', {
     attrs: {
       "src": "http://m1.sinaimg.cn/maxwidth.360/m1.sinaimg.cn/012a3a04ef4e48a5814d2a2aaa676f9b_500_333.jpg",
       "width": "180px",
       "height": "120px"
     }
-  })]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('md-button', {
-    staticClass: "md-icon-button md-raised md-primary"
-  }, [_c('md-icon', [_vm._v("add")])], 1), _vm._v(" "), _c('md-button', {
-    staticClass: "md-icon-button md-raised md-accent"
-  }, [_c('md-icon', [_vm._v("delete")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('md-button', {
-    ref: "send",
-    staticClass: "md-raised md-primary",
+  }), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "display": "grid",
+      "float": "right"
+    }
+  }, [_c('v-btn', {
+    staticClass: "red--text",
     attrs: {
-      "type": "submit"
+      "outline": "",
+      "fab": ""
+    }
+  }, [_c('v-icon', [_vm._v("delete")])], 1), _vm._v(" "), _c('v-btn', {
+    staticClass: "green--text",
+    attrs: {
+      "outline": "",
+      "fab": ""
+    }
+  }, [_c('v-icon', [_vm._v("edit")])], 1)], 1)])]), _vm._v(" "), _c('v-btn', {
+    ref: "send",
+    attrs: {
+      "round": "",
+      "type": "submit",
+      "primary": "",
+      "dark": ""
     },
     on: {
       "click": function($event) {
@@ -20327,30 +20335,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.updateUser($event)
       }
     }
-  }, [_vm._v("Save")])], 1)]), _vm._v(" "), _c('md-tab', {
+  }, [_vm._v("Done")])], 1)], 1)])], 1)], 1), _vm._v(" "), _c('v-tabs-content', {
     attrs: {
-      "md-label": "Change Pasword",
-      "md-icon": "vpn_key"
+      "id": "tab2"
     }
-  }, [_c('form', [_c('md-layout', {
+  }, [_c('v-card', {
     attrs: {
-      "md-align": "center",
-      "md-gutter": ""
+      "flat": ""
     }
-  }, [_c('md-layout', {
+  }, [_c('v-card-text', [_c('form', {
     attrs: {
-      "align": "center",
-      "md-flex-xsmall": "80",
-      "md-flex-medium": "50",
-      "md-flex": "30"
+      "method": "post"
     }
-  }, [_c('md-input-container', {
-    staticClass: "md-input-invalid"
-  }, [_c('label', [_vm._v("Current Password")]), _vm._v(" "), _c('md-input', {
+  }, [_c('v-layout', {
     attrs: {
-      "id": "currentPassword",
-      "name": "currentPassword",
-      "required": ""
+      "row": "",
+      "wrap": ""
+    }
+  }, [_c('v-flex', {
+    attrs: {
+      "xs12": "",
+      "sm12": "",
+      "md5": "",
+      "offset-md4": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "label": "Current password",
+      "required": "",
+      "id": "currentPassword"
     },
     model: {
       value: (_vm.change.currentPassword),
@@ -20359,13 +20372,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "change.currentPassword"
     }
-  })], 1), _vm._v(" "), _c('md-input-container', {
-    staticClass: "md-input-invalid"
-  }, [_c('label', [_vm._v("New Password")]), _vm._v(" "), _c('md-input', {
+  }), _vm._v(" "), _c('v-text-field', {
     attrs: {
-      "id": "newPassword",
-      "name": "newPassword",
-      "required": ""
+      "label": "New password",
+      "required": "",
+      "id": "newPassword"
     },
     model: {
       value: (_vm.change.newPassword),
@@ -20374,13 +20385,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "change.newPassword"
     }
-  })], 1), _vm._v(" "), _c('md-input-container', {
-    staticClass: "md-input-invalid"
-  }, [_c('label', [_vm._v("Confirm Password")]), _vm._v(" "), _c('md-input', {
+  }), _vm._v(" "), _c('v-text-field', {
     attrs: {
-      "id": "passwordConfirmation",
-      "name": "passwordConfirmation",
-      "required": ""
+      "label": "Confirm password",
+      "required": "",
+      "id": "passwordConfirmation"
     },
     model: {
       value: (_vm.change.passwordConfirmation),
@@ -20389,10 +20398,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "change.passwordConfirmation"
     }
-  })], 1)], 1)], 1), _vm._v(" "), _c('md-button', {
+  })], 1)], 1), _vm._v(" "), _c('v-btn', {
     ref: "send",
-    staticClass: "md-raised md-primary",
+    staticClass: "deep-orange",
     attrs: {
+      "round": "",
       "type": "submit"
     },
     on: {
@@ -20401,8 +20411,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.changePasword($event)
       }
     }
-  }, [_vm._v("Save password")])], 1)])], 1)], 1)
-},staticRenderFns: []}
+  }, [_vm._v("Change")])], 1)])], 1)], 1)], 1)], 1)], 1)], 1)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "template-title"
+  }, [_c('b', [_vm._v(" User Profile ")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -20438,7 +20452,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "width": "100%"
     }
-  }, [_c('v-container', {
+  }, [_c('v-container', [_c('div', {
     class: {
       'has-error': _vm.errorEmail
     },
@@ -20446,7 +20460,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "md-has-email": ""
     }
   }, [(_vm.errorEmail) ? _c('span', {
-    staticClass: "help-block"
+    staticClass: "text-error"
   }, [_c('strong', [_vm._v(_vm._s(_vm.emailError))])]) : _vm._e(), _vm._v(" "), _c('v-text-field', {
     attrs: {
       "prepend-icon": "email",
@@ -20464,7 +20478,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.email"
     }
-  })], 1), _vm._v(" "), _c('v-container', {
+  })], 1), _vm._v(" "), _c('div', {
     class: {
       'has-error': _vm.errorPassword
     },
@@ -20472,7 +20486,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "md-has-password": ""
     }
   }, [(_vm.errorPassword) ? _c('span', {
-    staticClass: "help-block"
+    staticClass: "text-error"
   }, [_c('strong', [_vm._v(_vm._s(_vm.passwordError))])]) : _vm._e(), _vm._v(" "), _c('v-text-field', {
     attrs: {
       "prepend-icon": "lock",
@@ -20489,23 +20503,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.password"
     }
-  })], 1), _vm._v(" "), _c('v-container', {
-    staticStyle: {
-      "display": "inline-block"
-    }
-  }, [_c('v-btn', {
-    ref: "send",
-    staticClass: "green",
-    attrs: {
-      "type": "submit"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.loginPost($event)
-      }
-    }
-  }, [_vm._v("Send")]), _vm._v(" "), _c('v-checkbox', {
+  })], 1), _vm._v(" "), _c('v-checkbox', {
     attrs: {
       "name": "remember",
       "label": "Remember"
@@ -20517,15 +20515,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "response.remember"
     }
-  })], 1), _vm._v(" "), _c('center', [_c('a', {
+  }), _vm._v(" "), _c('v-btn', {
+    ref: "send",
+    staticClass: "orange darken-3",
     attrs: {
+      "block": "",
+      "type": "submit"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.loginPost($event)
+      }
+    }
+  }, [_vm._v("Send")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('v-btn', {
+    staticClass: "cyan",
+    attrs: {
+      "outline": "",
+      "round": "",
+      "block": "",
       "href": "/register"
     }
-  }, [_vm._v("Sign Up")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('a', {
+  }, [_vm._v("Sign Up")]), _vm._v(" "), _c('v-btn', {
+    staticClass: "cyan",
     attrs: {
-      "href": "#"
+      "outline": "",
+      "block": "",
+      "round": "",
+      "href": "/register"
     }
-  }, [_vm._v("Forgout your password?")])]), _vm._v(" "), (_vm.showSlider) ? _c('header', {
+  }, [_vm._v("Forgout your password?")])], 1), _vm._v(" "), (_vm.showSlider) ? _c('header', {
     staticClass: "bar_progress"
   }, [_c('div', {
     attrs: {

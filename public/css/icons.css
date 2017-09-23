@@ -219,16 +219,22 @@ header.bar_progress {
 
 /****************************************************************/
 
-html, body {
-  background-color: #ecf0f1;
-  height: 100%;
+ html,#app {
+  background-color: #ecf0f1 !important;
+  overflow-y: auto !important;
 }
+
 .login-template{
   background: #fff;
   margin-top:6%;
 }
-.register-padding{
-  margin-top:2%;
+.register-template{
+  margin-top:5%;
+  background: #fff;
+  margin-bottom: 40px;
+}
+.text-error{
+  color: #f44336;
 }
 
 .header-component{
@@ -259,4 +265,8 @@ html, body {
 }
 .template-title>b{
   font-size:25px;padding:12px;color:#fff;
+}
+
+.container{
+  width: auto !important;
 }

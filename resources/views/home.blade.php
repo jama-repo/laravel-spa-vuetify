@@ -2,7 +2,11 @@
 
 @section('content')
 <div id="app">
-    <home></home>
+	<v-app>
+     	<main>
+    		<home></home>
+    	</main>
+ 	</v-app>
 </div>
 @stop
 
