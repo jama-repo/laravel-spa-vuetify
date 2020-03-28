@@ -1,5 +1,5 @@
-# laravel-spa-vuetify
-Spa page using Laravel and Vue
+# laravel-login-vuetify
+Spa login using Laravel and Vue
 
 
 Just execute:
